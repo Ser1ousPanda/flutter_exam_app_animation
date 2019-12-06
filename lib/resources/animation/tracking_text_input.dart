@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dating_app/pages/animation/input_helper.dart';
+import 'package:dating_app/resources/animation/input_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

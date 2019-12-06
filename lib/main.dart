@@ -1,4 +1,4 @@
-import 'package:dating_app/pages/theme/theme.dart';
+import 'package:dating_app/resources/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/main_page.dart';

@@ -1,5 +1,5 @@
 import 'package:dating_app/pages/home_page.dart';
-import 'package:dating_app/pages/theme/theme.dart';
+import 'package:dating_app/resources/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 typedef PressCallback = void Function();

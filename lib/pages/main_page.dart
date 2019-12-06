@@ -1,8 +1,8 @@
-import 'package:dating_app/pages/animation/character_controller.dart';
-import 'package:dating_app/pages/animation/login_character.dart';
-import 'package:dating_app/pages/animation/tracking_text_input.dart';
-import 'package:dating_app/pages/buttons/signin_button.dart';
-import 'package:dating_app/pages/theme/theme.dart';
+import 'package:dating_app/resources/animation/character_controller.dart';
+import 'package:dating_app/resources/animation/login_character.dart';
+import 'package:dating_app/resources/animation/tracking_text_input.dart';
+import 'package:dating_app/resources/buttons/signin_button.dart';
+import 'package:dating_app/resources/theme/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -32,13 +32,9 @@ class _MyHomePageState extends State<MainPage> {
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
-                  // Box decoration takes a gradient
                   gradient: LinearGradient(
-                    // Where the linear gradient begins and ends
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
-                    // Add one stop for each color. Stops should increase from 0
-                    // to 1
                     stops: const [1.0, 10.0],
                     colors: background,
                   ),

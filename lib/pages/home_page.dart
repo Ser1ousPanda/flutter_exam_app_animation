@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:dating_app/models/user.dart';
-import 'package:dating_app/pages/animation/screen_animation.dart';
-import 'package:dating_app/pages/buttons/user_buttons.dart';
+
 import 'package:dating_app/pages/details_page.dart';
-import 'package:dating_app/pages/theme/theme.dart';
+import 'package:dating_app/resources/animation/screen_animation.dart';
+import 'package:dating_app/resources/buttons/user_buttons.dart';
+
+import 'package:dating_app/resources/theme/theme.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
