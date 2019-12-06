@@ -1,7 +1,7 @@
 import 'package:dating_app/resources/animation/character_controller.dart';
-import 'package:dating_app/resources/animation/login_character.dart';
-import 'package:dating_app/resources/animation/tracking_text_input.dart';
 import 'package:dating_app/resources/buttons/signin_button.dart';
+import 'package:dating_app/resources/controllers/login_character.dart';
+import 'package:dating_app/resources/controllers/tracking_text_input.dart';
 import 'package:dating_app/resources/theme/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
