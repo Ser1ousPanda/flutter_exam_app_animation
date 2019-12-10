@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SlideRightRoute extends PageRouteBuilder<dynamic> {
-  final Widget widget;
   SlideRightRoute({this.widget})
       : super(pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) {
@@ -18,4 +17,5 @@ class SlideRightRoute extends PageRouteBuilder<dynamic> {
             child: child,
           );
         });
+        final Widget widget;
 }

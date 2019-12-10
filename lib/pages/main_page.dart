@@ -1,4 +1,3 @@
-import 'package:dating_app/resources/animation/character_controller.dart';
 import 'package:dating_app/resources/buttons/signin_button.dart';
 import 'package:dating_app/resources/controllers/login_character.dart';
 import 'package:dating_app/resources/controllers/tracking_text_input.dart';
@@ -6,6 +5,8 @@ import 'package:dating_app/resources/theme/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import '../resources/controllers/character_controller.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key key, this.title}) : super(key: key);

@@ -17,13 +17,32 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Future<User> _user;
+  Animation _pictAnimation;
+  AnimationController _picAnimationController;
 
   @override
   void initState() {
     super.initState();
     _user = _generateUser();
+
+    _picAnimationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
+    _pictAnimation = Tween(begin: 300.0, end: 330.0).animate(CurvedAnimation(
+        curve: Curves.bounceOut, parent: _picAnimationController));
+
+    _picAnimationController.addStatusListener((AnimationStatus status) {
+      if (status == AnimationStatus.completed) {
+        _picAnimationController.repeat();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _picAnimationController?.dispose();
   }
 
   @override
@@ -43,13 +62,16 @@ class _HomePageState extends State<HomePage> {
                   return SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
-                        Hero(
-                          tag: 'avatar',
-                          child: Image.network(
-                            snapshot.data.image,
-                            fit: BoxFit.fill,
-                            height: 300,
-                            width: 300,
+                        AnimatedBuilder(
+                          animation: _picAnimationController,
+                          builder: (context, child) => Hero(
+                            tag: 'avatar',
+                            child: Image.network(
+                              snapshot.data.image,
+                              fit: BoxFit.fill,
+                              height: _pictAnimation.value,
+                              width: _pictAnimation.value,
+                            ),
                           ),
                         ),
                         Padding(
@@ -63,6 +85,7 @@ class _HomePageState extends State<HomePage> {
                           onReload: () {
                             setState(() {
                               _user = _generateUser();
+                              _picAnimationController.forward();
                             });
                           },
                           onNext: () {
