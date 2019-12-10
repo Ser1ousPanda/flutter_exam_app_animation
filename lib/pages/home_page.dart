@@ -32,11 +32,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     _pictAnimation = Tween(begin: 300.0, end: 330.0).animate(CurvedAnimation(
         curve: Curves.bounceOut, parent: _picAnimationController));
 
-    _picAnimationController.addStatusListener((AnimationStatus status) {
-      if (status == AnimationStatus.completed) {
-        _picAnimationController.repeat();
-      }
-    });
+    _picAnimationController.addStatusListener(
+      (AnimationStatus status) {
+        if (status == AnimationStatus.completed) {
+          _picAnimationController.repeat();
+        }
+      },
+    );
   }
 
   @override
@@ -83,10 +85,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                         UserButtons(
                           onReload: () {
-                            setState(() {
-                              _user = _generateUser();
-                              _picAnimationController.forward();
-                            });
+                            setState(
+                              () {
+                                _user = _generateUser();
+                                _picAnimationController.forward();
+                              },
+                            );
                           },
                           onNext: () {
                             Navigator.of(context).push<void>(
